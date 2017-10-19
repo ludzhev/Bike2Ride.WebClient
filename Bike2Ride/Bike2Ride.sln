@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.WebClient", "Bike2Ride.WebClient\Bike2Ride.WebClient.csproj", "{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.WebClient", "Web\Bike2Ride.WebClient\Bike2Ride.WebClient.csproj", "{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.WebClient.Tests", "Bike2Ride.WebClient.Tests\Bike2Ride.WebClient.Tests.csproj", "{B3164467-4348-47CE-9F23-39CBEAD9B4C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.WebClient.Tests", "Web\Bike2Ride.WebClient.Tests\Bike2Ride.WebClient.Tests.csproj", "{B3164467-4348-47CE-9F23-39CBEAD9B4C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A1FBBEB8-958D-4A39-A19A-77F84FC5D458}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{140F2DD2-FA8F-42AF-A0CF-978AE3545833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1} = {140F2DD2-FA8F-42AF-A0CF-978AE3545833}
+		{B3164467-4348-47CE-9F23-39CBEAD9B4C4} = {140F2DD2-FA8F-42AF-A0CF-978AE3545833}
 	EndGlobalSection
 EndGlobal
