@@ -2,10 +2,13 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+
+using Bike2Ride.Data.Models;
+using Bike2Ride.WebClient.ViewModels;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Bike2Ride.WebClient.ViewModels;
 
 namespace Bike2Ride.WebClient.Controllers
 {
@@ -142,7 +145,7 @@ namespace Bike2Ride.WebClient.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new User { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -352,7 +355,7 @@ namespace Bike2Ride.WebClient.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new User { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
