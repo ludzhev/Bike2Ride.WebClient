@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Bike2Ride.WebClient.Models;
+using Bike2Ride.WebClient.ViewModels;
 
 namespace Bike2Ride.WebClient
 {

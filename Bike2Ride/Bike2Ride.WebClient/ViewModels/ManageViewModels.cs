@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Bike2Ride.WebClient.Models
+namespace Bike2Ride.WebClient.ViewModels
 {
     public class IndexViewModel
     {

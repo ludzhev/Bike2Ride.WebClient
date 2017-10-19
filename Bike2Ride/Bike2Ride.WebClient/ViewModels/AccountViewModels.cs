@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Bike2Ride.WebClient.Models
+namespace Bike2Ride.WebClient.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {
