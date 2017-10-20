@@ -49,6 +49,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201710200923385_Initial.cs" />
+    <Compile Include="Migrations\201710200923385_Initial.Designer.cs">
+      <DependentUpon>201710200923385_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MigrationsConfiguration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +66,15 @@
       <Project>{8EA05884-AA17-4C70-973F-7CC9EC7634B6}</Project>
       <Name>Bike2Ride.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\bin\" />
+    <Folder Include="Migrations\obj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710200923385_Initial.resx">
+      <DependentUpon>201710200923385_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

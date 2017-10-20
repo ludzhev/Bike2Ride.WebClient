@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A1FBBEB8-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{140F2DD2-FA8F-42AF-A0CF-978AE3545833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data", "Bike2Ride.Data\Bike2Ride.Data.csproj", "{E556726B-1811-4B9E-A099-7324482FB696}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data", "Data\Bike2Ride.Data\Bike2Ride.Data.csproj", "{E556726B-1811-4B9E-A099-7324482FB696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data.Models", "Bike2Ride.Data.Models\Bike2Ride.Data.Models.csproj", "{8EA05884-AA17-4C70-973F-7CC9EC7634B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data.Models", "Data\Bike2Ride.Data.Models\Bike2Ride.Data.Models.csproj", "{8EA05884-AA17-4C70-973F-7CC9EC7634B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

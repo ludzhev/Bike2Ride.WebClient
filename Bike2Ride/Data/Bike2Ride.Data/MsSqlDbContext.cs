@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+
 using Bike2Ride.Data.Models;
 using Bike2Ride.Data.Models.Contracts;
-using Microsoft.AspNet.Identity.EntityFramework;
 
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Bike2Ride.Data
 {
@@ -45,5 +46,6 @@ namespace Bike2Ride.Data
         {
             return new MsSqlDbContext();
         }
+
     }
 }
