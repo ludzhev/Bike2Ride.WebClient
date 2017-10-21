@@ -27,21 +27,25 @@ p {
 
 .parallax-container .section {
     width: 100%;
+    z-index: 2;
 }
 
 @media only screen and (max-width : 992px) {
     .parallax-container .section {
         position: absolute;
         top: 10%;
+        z-index: 2;
     }
     #index-banner .section {
         top: 10%;
+        z-index: 2;
     }
 }
 
 @media only screen and (max-width : 600px) {
     #index-banner .section {
         top: 0;
+        z-index: 2;
     }
 }
 
@@ -77,15 +81,15 @@ footer.page-footer {
     content: " ";
     position: absolute;
     left: 0;
-    top: 80%;
+    top: 85%;
     height: 160px;
     width: 100%;
     background: #fff;
-    -webkit-transform: skew(0deg, -2deg);
-    -moz-transform: skew(0deg, -2deg);
-    -o-transform: skew(0deg, -2deg);
-    -ms-transform: skew(0deg, -2deg);
-    transform: skew(0deg, -2deg);
+    -webkit-transform: skew(0deg, -5deg);
+    -moz-transform: skew(0deg, -5deg);
+    -o-transform: skew(0deg, -5deg);
+    -ms-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
     z-index: 1;
 }
 
