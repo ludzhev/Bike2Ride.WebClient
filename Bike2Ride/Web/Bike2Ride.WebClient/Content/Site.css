@@ -20,8 +20,7 @@ p {
 
 .parallax-container {
     color: #ffffff;
-    color: rgba(255,255,255,.9);  
-    height: auto;
+    color: rgba(255,255,255,.9);
     line-height: 0;  
     min-height: 380px;
 }
@@ -33,7 +32,7 @@ p {
 @media only screen and (max-width : 992px) {
     .parallax-container .section {
         position: absolute;
-        top: 40%;
+        top: 10%;
     }
     #index-banner .section {
         top: 10%;
@@ -72,4 +71,53 @@ footer.page-footer {
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+}
+
+#index-banner:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 80%;
+    height: 160px;
+    width: 100%;
+    background: #fff;
+    -webkit-transform: skew(0deg, -2deg);
+    -moz-transform: skew(0deg, -2deg);
+    -o-transform: skew(0deg, -2deg);
+    -ms-transform: skew(0deg, -2deg);
+    transform: skew(0deg, -2deg);
+    z-index: 1;
+}
+
+#bottom-banner:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 95%;
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    -webkit-transform: skew(0deg, +2deg);
+    -moz-transform: skew(0deg, +2deg);
+    -o-transform: skew(0deg, +2deg);
+    -ms-transform: skew(0deg, +2deg);
+    transform: skew(0deg, +2deg);
+    z-index: 1;
+}
+
+
+#bottom-banner:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    -webkit-transform: skew(0deg, -10deg);
+    -moz-transform: skew(0deg, -10deg);
+    -o-transform: skew(0deg, -10deg);
+    -ms-transform: skew(0deg, -10deg);
+    transform: skew(0deg, -10deg);
+    z-index: 1;
 }

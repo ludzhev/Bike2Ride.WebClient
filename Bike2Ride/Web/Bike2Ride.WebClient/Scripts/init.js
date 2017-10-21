@@ -1,8 +1,17 @@
 (function($){
   $(function(){
 
-    $('.button-collapse').sideNav();
-    $('.parallax').parallax();
+      $(".button-collapse").sideNav();
+      $(".parallax").parallax();
 
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
+  });
+})(jQuery);
+
+$(document).ready(function () {
+    $(".js-scrollTo").on("click", function () {
+        var page = $(this).attr("href");
+        var speed = 750;
+        $("html, body").animate({ scrollTop: $(page).offset().top }, speed);
+        return false;
+    });
+});

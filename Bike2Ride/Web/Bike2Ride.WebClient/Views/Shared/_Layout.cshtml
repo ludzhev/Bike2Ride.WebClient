@@ -51,24 +51,18 @@
         @Html.Partial("_LoginPartial")
     </ul>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-    
-<footer class="page-footer teal">
-    <div class="footer-copyright">
-        <div class="container">
-            &copy; @DateTime.Now.Year - <a class="brown-text text-lighten-3"
-                                           href="https://github.com/ludzhev/Bike2Ride.WebClient">Bike2Ride</a>.
-            Made by <a class="brown-text text-lighten-3"
-                       href="https://github.com/ludzhev">ludzhev</a>
+    @RenderBody()
+
+    <footer class="page-footer teal">
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; @DateTime.Now.Year - <a class="brown-text text-lighten-3"
+                                               href="https://github.com/ludzhev/Bike2Ride.WebClient">Bike2Ride</a>.
+                Made by <a class="brown-text text-lighten-3"
+                           href="https://github.com/ludzhev">ludzhev</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/materialize")
