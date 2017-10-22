@@ -1,7 +1,9 @@
 using System;
 using System.Data.Entity.Migrations;
+using System.Linq;
 
 using Bike2Ride.Data.Models;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -40,23 +42,26 @@ namespace Bike2Ride.Data.Migrations
             const string AdministratorUserName = "bike2ride@gmail.com";
             const string AdministratorPassword = "123456";
 
-            var roleStore = new RoleStore<IdentityRole>(context);
-            var roleManager = new RoleManager<IdentityRole>(roleStore);
-            var role = new IdentityRole { Name = "Admin" };
-            roleManager.Create(role);
-
-            var userStore = new UserStore<User>(context);
-            var userManager = new UserManager<User>(userStore);
-            var user = new User
+            if (!context.Roles.Any())
             {
-                UserName = AdministratorUserName,
-                Email = AdministratorUserName,
-                EmailConfirmed = true,
-                CreatedOn = DateTime.Now
-            };
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole {Name = "Admin"};
+                roleManager.Create(role);
 
-            userManager.Create(user, AdministratorPassword);
-            userManager.AddToRole(user.Id, "Admin");
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User
+                {
+                    UserName = AdministratorUserName,
+                    Email = AdministratorUserName,
+                    EmailConfirmed = true,
+                    CreatedOn = DateTime.Now
+                };
+
+                userManager.Create(user, AdministratorPassword);
+                userManager.AddToRole(user.Id, "Admin");
+            }
         }
     }
 }
