@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201710232055361_Add_Main_Tables.Designer.cs">
       <DependentUpon>201710232055361_Add_Main_Tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710232133086_Add_Cities.cs" />
+    <Compile Include="Migrations\201710232133086_Add_Cities.Designer.cs">
+      <DependentUpon>201710232133086_Add_Cities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\MigrationsConfiguration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710232055361_Add_Main_Tables.resx">
       <DependentUpon>201710232055361_Add_Main_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710232133086_Add_Cities.resx">
+      <DependentUpon>201710232133086_Add_Cities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

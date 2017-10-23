@@ -33,7 +33,7 @@ namespace Bike2Ride.Data.Models
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
 
-        public virtual ICollection<Trip> WantToRead
+        public virtual ICollection<Trip> Trips
         {
             get
             {

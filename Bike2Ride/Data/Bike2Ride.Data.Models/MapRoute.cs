@@ -14,5 +14,9 @@ namespace Bike2Ride.Data.Models
         public virtual Location StartLocation { get; set; }
 
         public virtual Location EndLocation { get; set; }
+
+        public virtual Location Center { get; set; }
+
+        public int? ZoomLevel { get; set; }
     }
 }

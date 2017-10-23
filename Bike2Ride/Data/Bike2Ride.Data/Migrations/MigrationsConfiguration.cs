@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -20,21 +21,55 @@ namespace Bike2Ride.Data.Migrations
         protected override void Seed(MsSqlDbContext context)
         {
             this.SeedUsers(context);
+            this.SeedLocations(context);
 
             base.Seed(context);
-            
-            //  This method will be called after migrating to the latest version.
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedLocations(MsSqlDbContext context)
+        {
+            var center = new Location()
+            {
+                Lat = 42.70,
+                Lng = 23.317
+            };
+
+            var existingCenter = context
+                .Locations
+                .FirstOrDefault(l => l.Lat == center.Lat && l.Lng == center.Lng)
+                ?? center;
+
+            City sofia = new City
+            {
+                Name = "Sofia",
+                Center = existingCenter,
+                ZoomLevel = 12,
+                Locations = new List<Location>()
+                {
+                    new Location()
+                    {
+                        Lat = 42.705,
+                        Lng = 23.297
+                    },
+                    new Location()
+                    {
+                        Lat = 42.690,
+                        Lng = 23.337
+                    },
+                    new Location()
+                    {
+                        Lat = 42.651,
+                        Lng = 23.379
+                    },
+                    new Location()
+                    {
+                        Lat = 42.674,
+                        Lng = 23.310
+                    }
+                }
+            };
+
+            context.Cities.AddOrUpdate(c => c.Name, sofia);
         }
 
         private void SeedUsers(MsSqlDbContext context)
@@ -46,7 +81,7 @@ namespace Bike2Ride.Data.Migrations
             {
                 var roleStore = new RoleStore<IdentityRole>(context);
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = new IdentityRole {Name = "Admin"};
+                var role = new IdentityRole { Name = "Admin" };
                 roleManager.Create(role);
 
                 var userStore = new UserStore<User>(context);

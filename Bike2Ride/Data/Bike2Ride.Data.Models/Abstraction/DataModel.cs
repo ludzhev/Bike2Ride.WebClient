@@ -20,9 +20,9 @@ namespace Bike2Ride.Data.Models.Abstraction
 
         public DateTime? ModifiedOn { get; set; }
 
+        public DateTime? DeletedOn { get; set; }
+
         [Index]
         public bool IsDeleted { get; set; }
-
-        public DateTime? DeletedOn { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace Bike2Ride.Data
         public IDbSet<Trip> Trips { get; set; }
         public IDbSet<MapRoute> Routes { get; set; }
         public IDbSet<Location> Locations { get; set; }
+        public IDbSet<City> Cities { get; set; }
 
         public override int SaveChanges()
         {
