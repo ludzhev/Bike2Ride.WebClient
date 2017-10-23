@@ -12,9 +12,10 @@ namespace Bike2Ride.Data
     public class MsSqlDbContext : IdentityDbContext<User>
     {
         private const string LocalConnection = "LocalConnection";
+        private const string DefaultConnection = "DefaultConnection";
 
         public MsSqlDbContext()
-            : base(LocalConnection, throwIfV1Schema: false)
+            : base(DefaultConnection, throwIfV1Schema: false)
         {
         }
 
