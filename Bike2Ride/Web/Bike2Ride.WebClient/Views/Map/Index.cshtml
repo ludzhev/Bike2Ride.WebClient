@@ -9,9 +9,22 @@
     @Styles.Render("~/Content/map")
 }
 
-@section Scripts {
+@section ScriptsTop {
     @Scripts.Render("~/bundles/map")
 }
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMWXcjYwHQEPTBBmpbBIVO6_RBtrGNwzY&callback=initMap" async defer>
-</script>
+@section Scripts {
+    <script>
+        mapProperty.center = { lat: 42.70, lng: 23.317 };
+        mapProperty.zoomLevel = 12;
+        mapProperty.stations = [
+            { lat: 42.705, lng: 23.297 },
+            { lat: 42.690, lng: 23.337 },
+            { lat: 42.651, lng: 23.379 },
+            { lat: 42.674, lng: 23.310 }
+        ];
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMWXcjYwHQEPTBBmpbBIVO6_RBtrGNwzY&callback=initMap" async defer>
+    </script>
+}
