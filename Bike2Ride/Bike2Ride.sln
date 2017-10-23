@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.WebClient", "Web\Bike2Ride.WebClient\Bike2Ride.WebClient.csproj", "{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.WebClient.Tests", "Web\Bike2Ride.WebClient.Tests\Bike2Ride.WebClient.Tests.csproj", "{B3164467-4348-47CE-9F23-39CBEAD9B4C4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A1FBBEB8-958D-4A39-A19A-77F84FC5D458}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{140F2DD2-FA8F-42AF-A0CF-978AE3545833}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data", "Data\Bike2Ride.Data\Bike2Ride.Data.csproj", "{E556726B-1811-4B9E-A099-7324482FB696}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data.Models", "Data\Bike2Ride.Data.Models\Bike2Ride.Data.Models.csproj", "{8EA05884-AA17-4C70-973F-7CC9EC7634B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride", "Bike2Ride\Bike2Ride.csproj", "{405E5873-9B5B-48BE-8C49-7DFEDF91A6CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3164467-4348-47CE-9F23-39CBEAD9B4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3164467-4348-47CE-9F23-39CBEAD9B4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3164467-4348-47CE-9F23-39CBEAD9B4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3164467-4348-47CE-9F23-39CBEAD9B4C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E556726B-1811-4B9E-A099-7324482FB696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E556726B-1811-4B9E-A099-7324482FB696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E556726B-1811-4B9E-A099-7324482FB696}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,14 +25,17 @@ Global
 		{8EA05884-AA17-4C70-973F-7CC9EC7634B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EA05884-AA17-4C70-973F-7CC9EC7634B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EA05884-AA17-4C70-973F-7CC9EC7634B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{405E5873-9B5B-48BE-8C49-7DFEDF91A6CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{405E5873-9B5B-48BE-8C49-7DFEDF91A6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{405E5873-9B5B-48BE-8C49-7DFEDF91A6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{405E5873-9B5B-48BE-8C49-7DFEDF91A6CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1} = {140F2DD2-FA8F-42AF-A0CF-978AE3545833}
-		{B3164467-4348-47CE-9F23-39CBEAD9B4C4} = {140F2DD2-FA8F-42AF-A0CF-978AE3545833}
 		{E556726B-1811-4B9E-A099-7324482FB696} = {A1FBBEB8-958D-4A39-A19A-77F84FC5D458}
 		{8EA05884-AA17-4C70-973F-7CC9EC7634B6} = {A1FBBEB8-958D-4A39-A19A-77F84FC5D458}
+		{405E5873-9B5B-48BE-8C49-7DFEDF91A6CD} = {A1FBBEB8-958D-4A39-A19A-77F84FC5D458}
 	EndGlobalSection
 EndGlobal
