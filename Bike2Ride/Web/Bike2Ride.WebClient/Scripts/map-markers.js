@@ -39,4 +39,4 @@ function clearMarkers() {
         markers[i].setMap(null);
     }
     markers = [];
-}
+}git 
