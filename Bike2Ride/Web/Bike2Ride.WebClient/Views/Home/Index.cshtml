@@ -95,10 +95,12 @@
             </p>
             
             <div class="center">
-                <a href="#"
-                   class="btn-large waves-effect waves-light teal lighten-1">
-                    SHOW THE MAP
-                </a>
+                @Html.ActionLink(
+                    "SHOW THE MAP",
+                    "Index",
+                    "Map",
+                    new { area = "" },
+                    new { @class = "btn-large waves-effect waves-light teal lighten-1" })
             </div>
         </div>
     </div>
