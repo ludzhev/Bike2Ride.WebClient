@@ -1,7 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@using Bike2Ride.WebClient.ViewModels
+@model MapViewModel
 
 <div id="map"></div>
 
@@ -15,14 +13,9 @@
 
 @section Scripts {
     <script>
-        mapProperty.center = { lat: 42.70, lng: 23.317 };
-        mapProperty.zoomLevel = 12;
-        mapProperty.stations = [
-            { lat: 42.705, lng: 23.297 },
-            { lat: 42.690, lng: 23.337 },
-            { lat: 42.651, lng: 23.379 },
-            { lat: 42.674, lng: 23.310 }
-        ];
+        mapProperty.center = (@Html.Raw(Json.Encode(Model.Center)));
+        mapProperty.zoomLevel = (@Html.Raw(Json.Encode(Model.ZoomLevel)));
+        mapProperty.stations = (@Html.Raw(Json.Encode(Model.Stations)));
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMWXcjYwHQEPTBBmpbBIVO6_RBtrGNwzY&callback=initMap" async defer>

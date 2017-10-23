@@ -6,7 +6,7 @@
     return {
         center,
         zoomLevel,
-        stations
+        stations,
     }
 }
 

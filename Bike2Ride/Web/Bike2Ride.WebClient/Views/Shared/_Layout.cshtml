@@ -9,7 +9,7 @@
     <meta name="viewport"
           content="width=device-width" ,
           initial-scale="1.0">
-    <title>@Model.Title - Bike2Ride</title>
+    <title>Bike2Ride</title>
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
     @Scripts.Render("~/bundles/modernizr")
@@ -24,9 +24,12 @@
                 <i class="material-icons">menu</i>
             </a>
             <div class="nav-wrapper container">
-                <div class="brand-logo center">
-                    @Model.Title
-                </div>
+                @if (@Model != null)
+                {
+                    <div class="brand-logo center">
+                        @Model.Title
+                    </div>
+                }
 
                 <ul class="left hide-on-med-and-down">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
