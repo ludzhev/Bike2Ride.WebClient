@@ -1,26 +1,41 @@
 ﻿using System.Web.Mvc;
 
+using Bike2Ride.WebClient.ViewModels;
+
 namespace Bike2Ride.WebClient.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return this.View();
+            var model = new HomeViewModel()
+            {
+                Title = "Home",
+            };
+
+            return this.View(model);
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var model = new AboutViewModel()
+            {
+                Title = "About",
+                Message = "Your application description page."
+            };
 
-            return this.View();
+            return this.View(model);
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            var model = new ContactViewModel()
+            {
+                Title = "Contact",
+                Message = "Your contact page."
+            };
 
-            return this.View();
+            return this.View(model);
         }
     }
 }

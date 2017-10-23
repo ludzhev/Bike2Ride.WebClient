@@ -1,19 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@using Bike2Ride.WebClient.ViewModels.Abstraction
+@model  BaseViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type"
           content="text/html" ;
           charset="utf-8" />
-
     <meta name="viewport"
           content="width=device-width" ,
           initial-scale="1.0">
-
-    <title>@ViewBag.Title - Bike2Ride</title>
-
+    <title>@Model.Title - Bike2Ride</title>
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
-
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("scriptstop", required: false)
 </head>
@@ -26,26 +24,21 @@
                 <i class="material-icons">menu</i>
             </a>
             <div class="nav-wrapper container">
-                @Html.ActionLink(
-                "Bike2Ride",
-                "Index",
-                "Home",
-                new { area = "" },
-                new { id = "logo-container", @class = "brand-logo center" })
+                <div class="brand-logo center">
+                    @Model.Title
+                </div>
 
                 <ul class="left hide-on-med-and-down">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-
                 <ul class="right hide-on-med-and-down">
                     @Html.Partial("_LoginPartial")
                 </ul>
             </div>
         </nav>
     </div>
-
     <ul id="nav-mobile" class="side-nav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
         <li>@Html.ActionLink("About", "About", "Home")</li>
@@ -53,9 +46,7 @@
         <li><div class="divider"></div></li>
         @Html.Partial("_LoginPartial")
     </ul>
-
     @RenderBody()
-
     <footer class="page-footer teal">
         <div class="footer-copyright">
             <div class="container">
@@ -66,7 +57,6 @@
             </div>
         </div>
     </footer>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/materialize")
     @RenderSection("scripts", required: false)
