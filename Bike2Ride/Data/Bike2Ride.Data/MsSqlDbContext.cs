@@ -18,6 +18,10 @@ namespace Bike2Ride.Data
         {
         }
 
+        public IDbSet<Trip> Trips { get; set; }
+        public IDbSet<MapRoute> Routes { get; set; }
+        public IDbSet<Location> Locations { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

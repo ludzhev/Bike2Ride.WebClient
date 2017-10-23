@@ -57,6 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstraction\DataModel.cs" />
+    <Compile Include="Enumerations\TripStatus.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="MapRoute.cs" />
+    <Compile Include="Trip.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Contracts\IAuditable.cs" />
     <Compile Include="Contracts\IDataModel.cs" />
