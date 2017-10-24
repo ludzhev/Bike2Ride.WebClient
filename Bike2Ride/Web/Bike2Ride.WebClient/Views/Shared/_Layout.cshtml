@@ -35,6 +35,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Add Station","Index", "Locations", new { Area = "Admin" }, new{})</li>
+                    }
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     @Html.Partial("_LoginPartial")
