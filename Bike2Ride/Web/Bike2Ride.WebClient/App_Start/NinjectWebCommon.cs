@@ -1,3 +1,18 @@
+using System.Data.Entity;
+using System.Web.Mvc;
+
+using Bike2Ride.Data;
+using Bike2Ride.Data.Contracts;
+using Bike2Ride.Data.Repository;
+using Bike2Ride.Data.UnitOfWork;
+using Bike2Ride.Services.Contracts;
+using Bike2Ride.WebClient.Infrastructure.ActionFilters;
+using Bike2Ride.WebClient.Infrastructure.Attributes;
+
+using Ninject.Extensions.Conventions;
+using Ninject.Web.Common.WebHost;
+using Ninject.Web.Mvc.FilterBindingSyntax;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Bike2Ride.WebClient.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Bike2Ride.WebClient.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,7 +76,47 @@ namespace Bike2Ride.WebClient.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind(x =>
+            {
+                x.FromThisAssembly()
+                    .SelectAllClasses()
+                    .BindDefaultInterface();
+            });
 
+            kernel.Bind(x =>
+            {
+                x.FromAssemblyContaining(typeof(IUserService))
+                    .SelectAllClasses()
+                    .BindDefaultInterface();
+            });
+
+            kernel
+                .Bind(typeof(DbContext), typeof(MsSqlDbContext))
+                .To<MsSqlDbContext>()
+                .InRequestScope();
+
+            kernel
+                .Bind(typeof(IEFRepository<>))
+                .To(typeof(EfRepostory<>))
+                .InRequestScope();
+
+            kernel
+                .Bind<IEFUnitOfWork>()
+                .To<EfUnitOfWork>()
+                .InRequestScope();
+
+            var context = kernel
+                .Bind<HttpContext>()
+                .ToMethod(c => HttpContext.Current);
+
+            kernel
+                .Bind<HttpContextBase>()
+                .To<HttpContextWrapper>()
+                .WithConstructorArgument(context);
+
+            kernel
+                .BindFilter<SaveChangesFilter>(FilterScope.Controller, 0)
+                .WhenActionMethodHas<SaveChangesAttribute>();
         }        
     }
 }
