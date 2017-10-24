@@ -8,8 +8,6 @@ namespace Bike2Ride.Data.Models
 {
     public class Trip : DataModel
     {
-        public Trip() { }
-
         public virtual MapRoute Route { get; set; }
 
         public virtual User User { get; set; }
