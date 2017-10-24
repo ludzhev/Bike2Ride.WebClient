@@ -36,6 +36,9 @@ namespace Bike2Ride.WebClient
 
             bundles.Add(new StyleBundle("~/Content/footer").Include(
                 "~/Content/footer.css"));
+
+            bundles.Add(new StyleBundle("~/Content/404").Include(
+                "~/Content/404.css"));
         }
     }
 }

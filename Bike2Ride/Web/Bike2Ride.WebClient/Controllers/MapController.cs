@@ -34,7 +34,7 @@ namespace Bike2Ride.WebClient.Controllers
         {
             var city = this.cityService.GetCityByName(DefaultCity);
 
-            var model = new MapViewModel()
+            var model = new CityViewModel()
             {
                 Title = IndexTitle,
                 Center = new LocationViewModel()

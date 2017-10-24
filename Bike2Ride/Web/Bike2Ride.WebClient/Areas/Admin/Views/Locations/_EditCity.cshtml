@@ -1,0 +1,21 @@
+﻿@model Bike2Ride.WebClient.ViewModels.CityViewModel
+
+@using (Ajax.BeginForm("Index", null,
+    new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "search-results",
+        InsertionMode = InsertionMode.Replace
+    },
+    new { id = "search-form" }))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.EditorFor(_ => @Model)
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Add</button>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
