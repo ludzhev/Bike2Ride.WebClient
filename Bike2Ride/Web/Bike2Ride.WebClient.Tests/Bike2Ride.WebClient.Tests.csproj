@@ -95,8 +95,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\MapControllerTests\Index_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Controllers\HomeControllerTests\Index_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -105,6 +106,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\Bike2Ride.Services\Bike2Ride.Services.csproj">
+      <Project>{3B6CE54E-F015-452F-B641-C1BE34D4299B}</Project>
+      <Name>Bike2Ride.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bike2Ride.WebClient\Bike2Ride.WebClient.csproj">
       <Project>{B52CD2C3-B194-45F5-9B85-F30D96A6A2F1}</Project>
       <Name>Bike2Ride.WebClient</Name>
