@@ -11,41 +11,20 @@ using NUnit.Framework;
 namespace Bike2Ride.Services.UnitTests.CityServiceTest
 {
     [TestFixture]
-    public class AddCenter_Should
+    public class AddLocations__Should
     {
         [Test]
-        public void ReturnNull_WhenNullPassed()
+        public void ReturnCollectionWithSameLocation_WhenThereIsNoSuchLocation()
         {
             // Arrange
             var cityRepositoryMock = new Mock<IEFRepository<City>>();
             var locationRepositoryMock = new Mock<IEFRepository<Location>>();
             var unitOfWorkMock = new Mock<IEFUnitOfWork>();
 
-            var sut = new CityService(
-                cityRepositoryMock.Object,
-                locationRepositoryMock.Object,
-                unitOfWorkMock.Object);
+            var location = new Location() {Lat = 1, Lng = 1};
+            var differentLocation = new Location() {Lat = 2, Lng = 2};
 
-            // Act
-            var result = sut.AddCenter(null);
-
-
-            // Asssert
-            Assert.IsNull(result);
-        }
-
-        [Test]
-        public void ReturnSameLocation_WhenThereIsNoSuchLocation()
-        {
-            // Arrange
-            var cityRepositoryMock = new Mock<IEFRepository<City>>();
-            var locationRepositoryMock = new Mock<IEFRepository<Location>>();
-            var unitOfWorkMock = new Mock<IEFUnitOfWork>();
-
-            var location = new Location() { Lat = 1, Lng = 1 };
-            var differentLocation = new Location() { Lat = 2, Lng = 2 };
-
-            var query = new List<Location>() { location }.AsQueryable();
+            var query = new List<Location>() {location}.AsQueryable();
 
             locationRepositoryMock.Setup(x => x.All).Returns(query);
 
@@ -55,11 +34,10 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
                 unitOfWorkMock.Object);
 
             // Act
-            var result = sut.AddCenter(differentLocation);
-
+            var result = sut.AddLocations(new List<Location>() {differentLocation});
 
             // Asssert
-            Assert.AreSame(differentLocation, result);
+            Assert.AreSame(differentLocation, result.First());
         }
 
         [Test]
@@ -83,11 +61,10 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
                 unitOfWorkMock.Object);
 
             // Act
-            var result = sut.AddCenter(differentLocation);
-
+            var result = sut.AddLocations(new List<Location>() { differentLocation });
 
             // Asssert
-            Assert.AreNotEqual(differentLocation, result);
+            Assert.AreNotSame(differentLocation, result.First());
         }
 
 
@@ -116,17 +93,18 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
 
             // Act & Asssert
             Assert.Throws<InvalidOperationException>(
-                () => sut.AddCenter(differentLocation));
+                () => sut.AddLocations(new List<Location>() { differentLocation }));
         }
 
         [Test]
-        public void CallLocationRepositoryAllOnce()
+        public void CallLocationRepositoryAllTwice_WhenTwoLacationsAdded()
         {
             // Arrange
             var cityRepositoryMock = new Mock<IEFRepository<City>>();
             var locationRepositoryMock = new Mock<IEFRepository<Location>>();
             var unitOfWorkMock = new Mock<IEFUnitOfWork>();
 
+            var location = new Location() { Lat = 2, Lng = 2 };
             var differentLocation = new Location() { Lat = 1, Lng = 1 };
 
             var query = new List<Location>()
@@ -142,10 +120,11 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
                 unitOfWorkMock.Object);
 
             // Act 
-            sut.AddCenter(differentLocation);
+            sut.AddLocations(new List<Location>() { location, differentLocation });
 
             // Asssert
-            locationRepositoryMock.VerifyGet(c => c.All, Times.Once);
+            locationRepositoryMock.VerifyGet(c => c.All, Times.Exactly(2));
         }
+
     }
 }

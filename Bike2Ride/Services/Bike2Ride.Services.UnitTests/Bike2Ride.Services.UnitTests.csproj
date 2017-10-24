@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CityServiceTest\AddCenter_Should.cs" />
+    <Compile Include="CityServiceTest\AddLocations _Should.cs" />
     <Compile Include="CityServiceTest\CreateCity_Should.cs" />
+    <Compile Include="CityServiceTest\GetCityByName_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
