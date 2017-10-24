@@ -57,7 +57,13 @@ namespace Bike2Ride.WebClient.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+
+            var model = new LoginViewModel()
+            {
+                Title = "Log In"
+            };
+
+            return View(model);
         }
 
         // POST: /Account/Login
@@ -134,7 +140,12 @@ namespace Bike2Ride.WebClient.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            var model = new RegisterViewModel()
+            {
+                Title = "Register",
+            };
+
+            return View(model);
         }
 
         // POST: /Account/Register

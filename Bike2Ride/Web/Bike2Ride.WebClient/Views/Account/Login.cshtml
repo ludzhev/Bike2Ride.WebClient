@@ -1,10 +1,7 @@
 ﻿@using Bike2Ride.WebClient.ViewModels
 @model Bike2Ride.WebClient.ViewModels.LoginViewModel
-@{
-    ViewBag.Title = "Log in";
-}
 
-<h2>@ViewBag.Title.</h2>
+<h2>@Model.Title.</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
@@ -57,6 +54,10 @@
         </section>
     </div>
 </div>
+
+@section Styles {
+    @Styles.Render("~/Content/footer")
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
