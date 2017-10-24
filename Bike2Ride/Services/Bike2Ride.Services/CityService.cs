@@ -57,7 +57,6 @@ namespace Bike2Ride.Services
             city.Locations = AddLocations(city.Locations);
 
             this.cityRepository.Add(city);
-            this.unitOfWork.SaveChanges();
 
             return true;
         }
@@ -72,10 +71,14 @@ namespace Bike2Ride.Services
             location = locationRepository
                               .All
                               .SingleOrDefault(
-                                  l => (l.Lat - location.Lat < Delta ||
-                                        location.Lat - l.Lat < Delta) &&
-                                       (l.Lng - location.Lng < Delta ||
-                                        location.Lng - l.Lng < Delta))
+                                        l => ((-Delta < l.Lat - location.Lat &&
+                                        l.Lat - location.Lat < Delta) ||
+                                       (-Delta < location.Lat - l.Lat &&
+                                       location.Lat - l.Lat < Delta)) &&
+                                       ((-Delta < l.Lng - location.Lng &&
+                                       l.Lng - location.Lng < Delta) ||
+                                        (-Delta < location.Lng - l.Lng &&
+                                        location.Lng - l.Lng < Delta)))
                           ?? location;
 
             return location;
@@ -90,10 +93,14 @@ namespace Bike2Ride.Services
                 var currentLocation = locationRepository
                                .All
                                .SingleOrDefault(
-                                              l => (l.Lat - location.Lat < Delta ||
-                                                    location.Lat - l.Lat < Delta) &&
-                                                   (l.Lng - location.Lng < Delta ||
-                                                    location.Lng - l.Lng < Delta))
+                                              l => ((-Delta < l.Lat - location.Lat &&
+                                                     l.Lat - location.Lat < Delta) ||
+                                                    (-Delta < location.Lat - l.Lat &&
+                                                     location.Lat - l.Lat < Delta)) &&
+                                                   ((-Delta < l.Lng - location.Lng &&
+                                                     l.Lng - location.Lng < Delta) ||
+                                                    (-Delta < location.Lng - l.Lng &&
+                                                     location.Lng - l.Lng < Delta)))
                            ?? location;
 
                 currentLocations.Add(currentLocation);

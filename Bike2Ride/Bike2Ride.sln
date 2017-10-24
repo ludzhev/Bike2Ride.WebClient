@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Data.Models", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Services", "Services\Bike2Ride.Services\Bike2Ride.Services.csproj", "{3B6CE54E-F015-452F-B641-C1BE34D4299B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike2Ride.Services.UnitTests", "Services\Bike2Ride.Services.UnitTests\Bike2Ride.Services.UnitTests.csproj", "{94059081-6B1D-49EE-AA3A-A5AA4F494ACF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0C4F414D-9E85-45F1-9CDB-E34BCBBAE26E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{3B6CE54E-F015-452F-B641-C1BE34D4299B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B6CE54E-F015-452F-B641-C1BE34D4299B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B6CE54E-F015-452F-B641-C1BE34D4299B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94059081-6B1D-49EE-AA3A-A5AA4F494ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94059081-6B1D-49EE-AA3A-A5AA4F494ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94059081-6B1D-49EE-AA3A-A5AA4F494ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94059081-6B1D-49EE-AA3A-A5AA4F494ACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
