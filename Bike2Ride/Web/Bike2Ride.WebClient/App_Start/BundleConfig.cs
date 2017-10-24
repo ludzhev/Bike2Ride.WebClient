@@ -24,6 +24,9 @@ namespace Bike2Ride.WebClient
             bundles.Add(new ScriptBundle("~/bundles/map").Include(
                 "~/Scripts/map-markers.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/map-edit").Include(
+                "~/Scripts/map-edit.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/materialize.min.css",
                       "~/Content/site.css"));

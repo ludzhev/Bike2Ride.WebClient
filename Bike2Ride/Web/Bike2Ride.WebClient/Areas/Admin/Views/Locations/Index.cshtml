@@ -1,1 +1,28 @@
-﻿<div>Admin</div>
+﻿@using Bike2Ride.WebClient.ViewModels
+@model MapViewModel
+
+<div id="floating-panel">
+    <input onclick="clearMarkers();" type=button value="Hide Markers">
+    <input onclick="showMarkers();" type=button value="Show All Markers">
+</div>
+<div id="map"></div>
+<p>Click on the map to add markers.</p>
+
+@section Styles {
+    @Styles.Render("~/Content/map")
+}
+
+@section ScriptsTop {
+    @Scripts.Render("~/bundles/map-edit")
+}
+
+@section Scripts {
+    <script>
+        mapProperty.center = (@Html.Raw(Json.Encode(Model.Center)));
+        mapProperty.zoomLevel = (@Html.Raw(Json.Encode(Model.ZoomLevel)));
+        mapProperty.stations = (@Html.Raw(Json.Encode(Model.Stations)));
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMWXcjYwHQEPTBBmpbBIVO6_RBtrGNwzY&callback=initMap" async defer>
+    </script>
+}
