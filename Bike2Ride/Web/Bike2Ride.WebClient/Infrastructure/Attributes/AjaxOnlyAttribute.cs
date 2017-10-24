@@ -4,7 +4,7 @@ using System.Web.Mvc;
 namespace Bike2Ride.WebClient.Infrastructure.Attributes
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class AjaxAttribute : ActionFilterAttribute
+    public class AjaxOnlyAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {

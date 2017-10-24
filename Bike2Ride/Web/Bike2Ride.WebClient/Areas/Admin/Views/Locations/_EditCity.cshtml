@@ -1,15 +1,11 @@
 ﻿@model Bike2Ride.WebClient.ViewModels.CityViewModel
 
-@using (Ajax.BeginForm("Index", null,
-    new AjaxOptions()
-    {
-        HttpMethod = "POST",
-        UpdateTargetId = "search-results",
-        InsertionMode = InsertionMode.Replace
-    },
-    new { id = "search-form" }))
+@using (Ajax.BeginForm("Add", new
+{}, new AjaxOptions
 {
-    @Html.AntiForgeryToken()
+    HttpMethod = "POST",
+}))
+{
     
     @Html.EditorFor(_ => @Model)
 

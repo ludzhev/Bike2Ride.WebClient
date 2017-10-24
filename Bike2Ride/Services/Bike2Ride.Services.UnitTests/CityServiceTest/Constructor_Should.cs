@@ -12,7 +12,7 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
     public class Constructor_Should
     {
         [Test]
-        public void Constructor_ShouldThrowArgumentNullException_WhenPassedNullCityRepository()
+        public void ThrowArgumentNullException_WhenPassedNullCityRepository()
         {
             // Arrange
             var locationRepositoryMock = new Mock<IEFRepository<Location>>();
@@ -24,7 +24,7 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
         }
 
         [Test]
-        public void Constructor_ShouldThrowArgumentNullException_WhenPassedNullLocationRepository()
+        public void ThrowArgumentNullException_WhenPassedNullLocationRepository()
         {
             // Arrange
             var cityRepositoryMock = new Mock<IEFRepository<City>>();
@@ -36,7 +36,7 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
         }
 
         [Test]
-        public void Constructor_ShouldThrowArgumentNullException_WhenPassedNullUnitOfWork()
+        public void ThrowArgumentNullException_WhenPassedNullUnitOfWork()
         {
             // Arrange
             var cityRepositoryMock = new Mock<IEFRepository<City>>();
@@ -48,7 +48,7 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
         }
 
         [Test]
-        public void Constructor_ShouldNotThrow_WhenPassedValidDependencies()
+        public void NotThrow_WhenPassedValidDependencies()
         {
             // Arrange
             var cityRepositoryMock = new Mock<IEFRepository<City>>();
@@ -64,7 +64,7 @@ namespace Bike2Ride.Services.UnitTests.CityServiceTest
         }
 
         [Test]
-        public void Constructor_ShouldCreateAnInstanceOfCityService_WhenPassedValidDependencies()
+        public void CreateAnInstanceOfCityService_WhenPassedValidDependencies()
         {
             // Arrange
             var cityRepositoryMock = new Mock<IEFRepository<City>>();

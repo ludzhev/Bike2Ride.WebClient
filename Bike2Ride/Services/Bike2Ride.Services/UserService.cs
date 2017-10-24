@@ -23,7 +23,7 @@ namespace Bike2Ride.Services
         {
             this.userRepository
                 .All
-                .FirstOrDefault(u => u.Id == userId.ToString())
+                .SingleOrDefault(u => u.Id == userId.ToString())
                 ?.Trips.Add(trip);
         }
     }

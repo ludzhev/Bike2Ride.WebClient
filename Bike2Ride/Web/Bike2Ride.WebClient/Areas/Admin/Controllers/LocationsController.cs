@@ -56,10 +56,9 @@ namespace Bike2Ride.WebClient.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [Ajax]
+        [AjaxOnly]
         [SaveChanges]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(CityViewModel model)
+        public ActionResult Add(CityViewModel model)
         {
             var city = new City()
             {
